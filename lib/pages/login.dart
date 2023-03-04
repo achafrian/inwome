@@ -22,11 +22,24 @@ class _Login extends State<Login> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: isLoading
-          ? Center(
-              child: Container(
-                height: 70,
-                width: 70,
-                child: CircularProgressIndicator(),
+          ? GestureDetector(
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => Login(),
+                  ),
+                );
+              }, // Image tapped
+              child: Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Container(
+                      child: Image.asset('assets/images/loading.png'),
+                      padding: EdgeInsets.all(100),
+                    ),
+                  ],
+                ),
               ),
             )
           : SingleChildScrollView(
@@ -35,7 +48,7 @@ class _Login extends State<Login> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SizedBox(
-                    height: 30,
+                    height: 40,
                   ),
                   Image.asset("assets/images/headerlogo.png", width: 153),
                   SizedBox(
@@ -79,7 +92,7 @@ class _Login extends State<Login> {
                   SizedBox(height: 10),
                   TextFormField(
                     controller: _password,
-                    obscureText: false,
+                    obscureText: true,
                     decoration: InputDecoration(
                       hintText: "Password",
                       contentPadding:
@@ -89,17 +102,18 @@ class _Login extends State<Login> {
                     ),
                   ),
                   SizedBox(
-                    height: 24,
+                    height: 26,
                   ),
-                  MaterialButton(
-                    minWidth: 343,
-                    height: 50,
-                    elevation: 8,
-                    color: primary_main,
-                    child: Text("Masuk",
-                        style:
-                            button_medium_semibold.copyWith(color: neutral_10)),
-                    textColor: Colors.white,
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      primary: primary_main,
+                      onPrimary: neutral_10,
+                      shadowColor: Color.fromARGB(255, 0, 0, 0),
+                      elevation: 3,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8.0)),
+                      minimumSize: Size(343, 50),
+                    ),
                     onPressed: () {
                       if (_email.text.isNotEmpty && _password.text.isNotEmpty) {
                         setState(() {
@@ -127,9 +141,13 @@ class _Login extends State<Login> {
                         print("Please fill form correctly");
                       }
                     },
+                    child: Text(
+                      'Masuk',
+                      style: button_medium_bold,
+                    ),
                   ),
                   SizedBox(
-                    height: 350,
+                    height: 340,
                   ),
                   Center(
                     child: Wrap(
@@ -150,7 +168,7 @@ class _Login extends State<Login> {
                           }, // Image tapped
                           child: Container(
                             child: Text(
-                              "Daftar",
+                              " Daftar",
                               style: button_medium_semibold.copyWith(
                                   color: primary_main),
                             ),

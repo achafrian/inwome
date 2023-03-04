@@ -138,17 +138,23 @@ class Profiles extends State<Profile> {
               ),
             ),
             SizedBox(height: 60),
-            MaterialButton(
-              minWidth: 343,
-              height: 50,
-              elevation: 8,
-              color: primary_main,
-              child: Text("Logout",
-                  style: button_medium_semibold.copyWith(color: neutral_10)),
-              textColor: Colors.white,
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                primary: primary_main,
+                onPrimary: neutral_10,
+                shadowColor: Color.fromARGB(255, 0, 0, 0),
+                elevation: 3,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8.0)),
+                minimumSize: Size(343, 50),
+              ),
               onPressed: () {
                 logOut(context);
               },
+              child: Text(
+                'Keluar',
+                style: button_medium_bold,
+              ),
             ),
           ],
         ),

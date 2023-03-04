@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:inwome/pages/form_kekerasan.dart';
 import 'package:inwome/theme.dart';
+import 'package:flutter_custom_cards/flutter_custom_cards.dart';
+import 'package:getwidget/getwidget.dart';
 import 'package:inwome/pages/detail_psikologi.dart';
 import 'package:inwome/pages/psikolog.dart';
 import 'package:inwome/pages/artikel.dart';
@@ -39,12 +41,12 @@ class _HomePage extends State<HomePage> {
   ];
 
   final List foto = [
-    'assets/images/',
-    'assets/images/',
-    'assets/images/',
-    'assets/images/',
-    'assets/images/',
-    'assets/images/',
+    'assets/images/org1.png',
+    'assets/images/org2.png',
+    'assets/images/org3.png',
+    'assets/images/org4.png',
+    'assets/images/org5.png',
+    'assets/images/org6.png',
   ];
 
   final List subjudul = [
@@ -65,6 +67,15 @@ class _HomePage extends State<HomePage> {
     'assets/images/psi6.png',
   ];
 
+  final List ket = [
+    'assets/images/ket1.png',
+    'assets/images/ket2.png',
+    'assets/images/ket3.png',
+    'assets/images/ket4.png',
+    'assets/images/ket5.png',
+    'assets/images/ket6.png',
+  ];
+
   final List tentang = [
     'Seorang psikolog dengan pengalaman selama 7 tahun di bidang psikologi klinis. Ia memiliki gelar sarjana psikologi dari Universitas Indonesia dan gelar magister psikologi klinis dari Universitas Gadjah Mada. Selama karirnya sebagai psikolog, ia telah bekerja dengan berbagai jenis masalah kesehatan mental, seperti depresi, kecemasan, gangguan makan, trauma, dan gangguan kepribadian. Ia juga memiliki keahlian dalam melakukan terapi kognitif perilaku dan terapi keluarga.',
     'Seorang psikologi klinis anak dan remaja yang profesional dan bersertifikasi di bidangnya. Dengan pengalaman selama lebih dari 3 tahun di sebuah rumah sakit, telah berhasil menangani sekitar 200 anak per tahunnya yang mengalami berbagai macam gangguan mental.',
@@ -83,7 +94,7 @@ class _HomePage extends State<HomePage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
-              height: 30,
+              height: 40,
             ),
             Image.asset("assets/images/headerlogo.png", width: 153),
             SizedBox(
@@ -242,6 +253,105 @@ class _HomePage extends State<HomePage> {
                   ),
                 ),
               ],
+            ),
+            SizedBox(
+              height: 24,
+            ),
+            Container(
+              child: Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: ListView.builder(
+                  itemBuilder: (context, index) {
+                    return GFCard(
+                      margin: EdgeInsets.all(6),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      boxFit: BoxFit.cover,
+                      showImage: true,
+                      title: GFListTile(
+                        avatar: GFAvatar(
+                          backgroundImage: AssetImage(foto[index]),
+                        ),
+                        titleText: judul[index],
+                        subTitleText: subjudul[index],
+                      ),
+                      buttonBar: GFButtonBar(
+                        children: <Widget>[
+                          GFButton(
+                              size: GFSize.MEDIUM,
+                              color: primary_main,
+                              text: "Selengkapnya",
+                              textStyle: button_small_medium,
+                              child: Image.asset(gambar[index]),
+                              onPressed: () => Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => DetailPage(
+                                          judul: judul[index],
+                                          subjudul: subjudul[index],
+                                          gambar: gambar[index],
+                                          foto: foto[index],
+                                          ket: ket[index],
+                                          tentang: tentang[index]),
+                                    ),
+                                  )),
+                        ],
+                      ),
+                      content: Image.asset(gambar[index]),
+                    );
+                  },
+                  itemCount: judul.length,
+                ),
+              ),
+            ),
+            Container(
+              child: Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: ListView.builder(
+                  itemBuilder: (context, index) {
+                    return GFCard(
+                      margin: EdgeInsets.all(6),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      boxFit: BoxFit.cover,
+                      showImage: true,
+                      title: GFListTile(
+                        avatar: GFAvatar(
+                          backgroundImage: AssetImage(foto[index]),
+                        ),
+                        titleText: judul[index],
+                        subTitleText: subjudul[index],
+                      ),
+                      buttonBar: GFButtonBar(
+                        children: <Widget>[
+                          GFButton(
+                              size: GFSize.MEDIUM,
+                              color: primary_main,
+                              text: "Selengkapnya",
+                              textStyle: button_small_medium,
+                              child: Image.asset(gambar[index]),
+                              onPressed: () => Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => DetailPage(
+                                          judul: judul[index],
+                                          subjudul: subjudul[index],
+                                          gambar: gambar[index],
+                                          foto: foto[index],
+                                          ket: ket[index],
+                                          tentang: tentang[index]),
+                                    ),
+                                  )),
+                        ],
+                      ),
+                      content: Image.asset(gambar[index]),
+                    );
+                  },
+                  itemCount: judul.length,
+                ),
+              ),
             ),
           ],
         ),

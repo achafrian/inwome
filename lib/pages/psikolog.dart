@@ -11,19 +11,6 @@ class Psikolog extends StatefulWidget {
 }
 
 class _Psikolog extends State<Psikolog> {
-  List headline = [
-    'assets/images/headline1.png',
-    'assets/images/headline2.png',
-    'assets/images/headline3.png',
-  ];
-
-  List kategori = [
-    'assets/images/pelecehan.png',
-    'assets/images/kdrt.png',
-    'assets/images/kekerasan.png',
-    'assets/images/pembullyan.png',
-  ];
-
   final List judul = [
     "Eva Pratiwi, M.Psi.T",
     "Mursita Putri, S.Psi",

@@ -46,18 +46,8 @@ class _Register extends State<Register> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Container(
-                      child: Text(
-                        "Berhasil Register",
-                        style:
-                            button_large_semibold.copyWith(color: neutral_100),
-                      ),
-                    ),
-                    Container(
-                      child: Text(
-                        "Login disini",
-                        style:
-                            button_large_semibold.copyWith(color: primary_main),
-                      ),
+                      child: Image.asset('assets/images/loading.png'),
+                      padding: EdgeInsets.all(100),
                     ),
                   ],
                 ),
@@ -69,7 +59,7 @@ class _Register extends State<Register> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SizedBox(
-                    height: 30,
+                    height: 40,
                   ),
                   Image.asset("assets/images/headerlogo.png", width: 153),
                   SizedBox(
@@ -172,17 +162,18 @@ class _Register extends State<Register> {
                     ),
                   ),
                   SizedBox(
-                    height: 24,
+                    height: 26,
                   ),
-                  MaterialButton(
-                    minWidth: 343,
-                    height: 50,
-                    elevation: 8,
-                    color: primary_main,
-                    child: Text("Daftar",
-                        style:
-                            button_medium_semibold.copyWith(color: neutral_10)),
-                    textColor: Colors.white,
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      primary: primary_main,
+                      onPrimary: neutral_10,
+                      shadowColor: Color.fromARGB(255, 0, 0, 0),
+                      elevation: 3,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8.0)),
+                      minimumSize: Size(343, 50),
+                    ),
                     onPressed: () {
                       if (_name.text.isNotEmpty &&
                           _email.text.isNotEmpty &&
@@ -211,9 +202,13 @@ class _Register extends State<Register> {
                         print("Please enter Fields");
                       }
                     },
+                    child: Text(
+                      'Daftar',
+                      style: button_medium_bold,
+                    ),
                   ),
                   SizedBox(
-                    height: 46,
+                    height: 30,
                   ),
                   Center(
                     child: Wrap(
@@ -234,7 +229,7 @@ class _Register extends State<Register> {
                           }, // Image tapped
                           child: Container(
                             child: Text(
-                              "Masuk",
+                              " Masuk",
                               style: button_medium_semibold.copyWith(
                                   color: primary_main),
                             ),
