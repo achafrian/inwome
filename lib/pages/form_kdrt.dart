@@ -140,14 +140,14 @@ class _Formkdrt extends State<Formkdrt> {
               ),
             ),
             SizedBox(
-              height: 40,
+              height: 17,
             ),
             Text(
               "Keterangan : Data privasi yang anda masukkan tidak akan terbaca oleh orang lain dan tersimpan dengan bijak oleh sistem",
               style: button_small_semibold.copyWith(color: neutral_90),
             ),
             SizedBox(
-              height: 20,
+              height: 24,
             ),
             MaterialButton(
               minWidth: 343,

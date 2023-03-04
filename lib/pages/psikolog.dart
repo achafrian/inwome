@@ -130,7 +130,7 @@ class _Psikolog extends State<Psikolog> {
                     GFButton(
                         size: GFSize.MEDIUM,
                         color: primary_main,
-                        text: "Lebih Dekat",
+                        text: "Selengkapnya",
                         textStyle: button_small_medium,
                         child: Image.asset(gambar[index]),
                         onPressed: () => Navigator.push(

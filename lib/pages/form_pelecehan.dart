@@ -33,7 +33,7 @@ class _Formpelecehan extends State<Formpelecehan> {
           ),
         ),
         title: Text(
-          "Form Konsultasi KDRT",
+          "Form Konsultasi Pelecehan Seksual",
           style: h6_semibold.copyWith(color: neutral_10),
         ),
         toolbarHeight: 100,
@@ -140,14 +140,14 @@ class _Formpelecehan extends State<Formpelecehan> {
               ),
             ),
             SizedBox(
-              height: 40,
+              height: 17,
             ),
             Text(
               "Keterangan : Data privasi yang anda masukkan tidak akan terbaca oleh orang lain dan tersimpan dengan bijak oleh sistem",
               style: button_small_semibold.copyWith(color: neutral_90),
             ),
             SizedBox(
-              height: 20,
+              height: 24,
             ),
             MaterialButton(
               minWidth: 343,

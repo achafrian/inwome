@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:inwome/pages/Methods.dart';
 import 'package:inwome/theme.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -145,7 +146,9 @@ class Profiles extends State<Profile> {
               child: Text("Logout",
                   style: button_medium_semibold.copyWith(color: neutral_10)),
               textColor: Colors.white,
-              onPressed: () {},
+              onPressed: () {
+                logOut(context);
+              },
             ),
           ],
         ),
